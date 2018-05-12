@@ -21,23 +21,23 @@ new Vue({
   el: '#header',
   router,
   components: { AppHeader },
-  template: '<app-header>'
+  template: '<app-header/>'
 })
 new Vue({
   el: '#footer',
   router,
   components: { AppFooter },
-  template: '<app-footer>'
+  template: '<app-footer/>'
 })
 new Vue({
   el: '#left',
   router,
   components: { Left },
-  template: '<left>'
+  template: '<left/>'
 })
 new Vue({
   el: '#right',
   router,
   components: { Right },
-  template: '<right>'
+  template: '<right/>'
 })

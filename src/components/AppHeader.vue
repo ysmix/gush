@@ -1,16 +1,16 @@
 <template>
   <div class="header">
-    <h1>{{ title }}</h1>
+    <h1>{{ header_title }}</h1>
     <hr/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'title',
+  name: 'header_title',
   data () {
     return {
-      title: '羅針盤'
+      header_title: '羅針盤'
     }
   }
 }
