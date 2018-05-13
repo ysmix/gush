@@ -6,6 +6,7 @@
 
 <style scoped>
 .footer {
-  background-color:darkseagreen
+  clear: both;
+  background-color:darkseagreen;
 }
 </style>
