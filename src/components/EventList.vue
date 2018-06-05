@@ -1,6 +1,8 @@
 <template>
   <div class="event-list">
     <h1>EventList</h1>
+    <el-input placeholder="Please input" v-model="keyword"></el-input>
+    {{keyword}}
     <ul>
       <li v-for="event in event_list" :key="event.id">
         <a :href="'https://connpass.com/event/' + event.id + '/'">{{event.title}}</a>
@@ -16,7 +18,8 @@ export default {
   name: 'event_list',
   data () {
     return {
-      event_list: []
+      event_list: [],
+      keyword: ""
     }
   },
   async created () {
