@@ -1,7 +1,8 @@
 <template>
   <div class="event-list">
     <h1>EventList</h1>
-    <el-input placeholder="Please input" v-model="keyword"></el-input>
+    <el-input placeholder="Please input" v-model="keyword" @keyup.enter.native="search"></el-input>
+    <el-button @click="search">検索</el-button>
     {{keyword}}
     <ul>
       <li v-for="event in event_list" :key="event.id">
@@ -14,6 +15,7 @@
 <script>
 import axios from 'axios'
 
+
 export default {
   name: 'event_list',
   data () {
@@ -22,6 +24,16 @@ export default {
       keyword: ""
     }
   },
+  
+  methods: {
+    search() {
+      axios.get('http://localhost:8080/event?keyword=' + this.keyword)
+        .then((response) => {
+          this.event_list = response.data
+        })
+    }
+  },
+
   async created () {
     try {
       let response = await axios.get('http://localhost:8080/event?keyword=Lambda')
