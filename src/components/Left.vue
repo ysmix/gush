@@ -9,5 +9,7 @@
   float: left;
   background-color:chocolate;
   width: 10%;
+  height: auto;
+  height: fit-content;
 }
 </style>
