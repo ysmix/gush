@@ -1,12 +1,11 @@
 <template>
-  <div class="footer">
+  <div class="footer" id="footer">
     <h1>Footer</h1>
   </div>
 </template>
 
 <style scoped>
 .footer {
-  clear: both;
   background-color:darkseagreen;
 }
 </style>

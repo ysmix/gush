@@ -1,15 +1,10 @@
 <template>
-  <div class="left">
+  <div class="left" id="left">
     <h1>Left</h1>
   </div>
 </template>
 
 <style scoped>
 .left {
-  float: left;
-  background-color:chocolate;
-  width: 10%;
-  height: auto;
-  height: fit-content;
-}
+  background-color:chocolate;}
 </style>

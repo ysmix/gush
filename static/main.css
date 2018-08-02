@@ -1,0 +1,27 @@
+
+#container{
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 50px 1fr 50px;
+
+    grid-template-areas: 
+      "header-area"
+      "left-area app-area right-area"
+      "footer-area";
+}
+
+#header {
+    grid-area: header-area
+}
+#left {
+    grid-area: left-area
+}
+#app {
+    grid-area: app-area
+}
+#right {
+    grid-area: right-area
+}
+#footer {
+    grid-area: footer-area
+}

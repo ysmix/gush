@@ -1,13 +1,11 @@
 <template>
-  <div class="right">
+  <div class="right" id="right">
     <h1>Right</h1>
   </div>
 </template>
 
 <style scoped>
 .right {
-  float: right;
   background-color:chocolate;
-  width: 10%;
 }
 </style>

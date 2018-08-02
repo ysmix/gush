@@ -1,5 +1,5 @@
 <template>
-  <div class="event-list">
+  <div class="event-list" id="event-list">
     <h1>EventList</h1>
     <el-input placeholder="Please input" v-model="keyword" @keyup.enter.native="search"></el-input>
     <el-button @click="search">検索</el-button>
@@ -12,7 +12,7 @@
         </p>
         <p><a :href="'https://connpass.com/event/' + event.id + '/'" class="event-title">{{event.title}}</a></p>
         <p class="datetime">
-          {{event.start}}~{{event.end}} 
+          {{event.start}}~{{event.end}}
           </p>
         <p class="address">
           {{event.address}} {{event.place}}
@@ -25,18 +25,17 @@
 <script>
 import axios from 'axios'
 
-
 export default {
   name: 'event_list',
   data () {
     return {
       event_list: [],
-      keyword: ""
+      keyword: ''
     }
   },
-  
+
   methods: {
-    search() {
+    search () {
       axios.get('http://localhost:8080/event?keyword=' + this.keyword)
         .then((response) => {
           this.event_list = response.data
@@ -57,9 +56,7 @@ export default {
 
 <style scoped>
 .event-list {
-  float: left;
   background-color:white;
-  width: 80%;
   line-height: 70%
 }
 .event {
@@ -85,10 +82,10 @@ export default {
 }
 .address {
   font-size: small;
-  color: darkgray; 
+  color: darkgray;
 }
 .datetime {
   font-size: small;
-  color: darkgray; 
+  color: darkgray;
 }
 </style>
