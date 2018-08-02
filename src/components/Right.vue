@@ -6,6 +6,6 @@
 
 <style scoped>
 .right {
-  background-color:chocolate;
+  background-color:Linen;
 }
 </style>

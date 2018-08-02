@@ -6,5 +6,5 @@
 
 <style scoped>
 .left {
-  background-color:chocolate;}
+  background-color:Linen;}
 </style>

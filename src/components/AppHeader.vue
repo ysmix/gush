@@ -18,6 +18,6 @@ export default {
 
 <style scoped>
 .header {
-  background-color: azure
+  background-color: LavenderBlush
 }
 </style>

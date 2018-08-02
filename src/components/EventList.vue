@@ -56,6 +56,7 @@ export default {
 
 <style scoped>
 .event-list {
+  padding: 3%;
   background-color:white;
   line-height: 70%
 }
