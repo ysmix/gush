@@ -9,7 +9,7 @@
         <p>
           <a :href="event.series.url" class="series">{{event.series.title}}</a>
           <img src="static/connpass_logo_3.png" class="provider-img"><img>
-          <a :href="'http://www.google.com/calendar/event?action=TEMPLATE&text=' + event.title + '&details=detail&location=' + event.place + '&dates=20180913/20180914'" class="add_calendar">カレンダー登録</a>
+          <a :href="'http://www.google.com/calendar/event?action=TEMPLATE&text=' + event.title + '&details=detail&location=' + event.place + '&dates=' + format_google_calendar(event.start) + '/' + format_google_calendar(event.end)" class="add_calendar">カレンダー登録</a>
         </p>
         <p><a :href="'https://connpass.com/event/' + event.id + '/'" class="event-title">{{event.title}}</a></p>
         <p class="datetime">
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import axios from 'axios'
 
 export default {
@@ -41,6 +42,9 @@ export default {
         .then((response) => {
           this.event_list = response.data
         })
+    },
+    format_google_calendar (date) {
+      return moment(date).format('YYYYMMDDTHHmmss')
     }
   },
 
