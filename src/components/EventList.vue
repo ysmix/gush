@@ -9,6 +9,7 @@
         <p>
           <a :href="event.series.url" class="series">{{event.series.title}}</a>
           <img src="static/connpass_logo_3.png" class="provider-img"><img>
+          <a :href="'http://www.google.com/calendar/event?action=TEMPLATE&text=' + event.title + '&details=detail&location=' + event.place + '&dates=20180913/20180914'" class="add_calendar">カレンダー登録</a>
         </p>
         <p><a :href="'https://connpass.com/event/' + event.id + '/'" class="event-title">{{event.title}}</a></p>
         <p class="datetime">
