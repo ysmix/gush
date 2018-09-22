@@ -9,7 +9,7 @@
         <p>
           <a :href="event.series.url" class="series">{{event.series.title}}</a>
           <img src="static/connpass_logo_3.png" class="provider-img"><img>
-          <a :href="'http://www.google.com/calendar/event?action=TEMPLATE&text=' + event.title + '&details=detail&location=' + event.place + '&dates=' + format_google_calendar(event.start) + '/' + format_google_calendar(event.end)" class="add_calendar">カレンダー登録</a>
+          <a :href="google_calendar_add_event_url(event.title, event.place, event.start, event.end)" class="add_calendar">カレンダー登録</a>
         </p>
         <p><a :href="'https://connpass.com/event/' + event.id + '/'" class="event-title">{{event.title}}</a></p>
         <p class="datetime">
@@ -43,8 +43,17 @@ export default {
           this.event_list = response.data
         })
     },
+    google_calendar_add_event_url (title, place, start, end) {
+      let dates = this.format_google_calendar(start) + '/' + this.format_google_calendar(end)
+      return 'http://www.google.com/calendar/event' +
+        '?action=TEMPLATE' +
+        '&text=' + encodeURIComponent(title) +
+        '&details=details' +
+        '&location=' + encodeURIComponent(place) +
+        '&dates=' + dates
+    },
     format_google_calendar (date) {
-      return moment(date).format('YYYYMMDDTHHmmss')
+      return moment(date, 'YYYY/MM/DD HH:mm').utc().format('YYYYMMDDTHHmmss') + 'Z'
     }
   },
 
